@@ -1,0 +1,105 @@
+.latest {
+    &__grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-gap: 3rem;
+        @include mediaQuery($break-md) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__side {
+        padding-left: 3rem;
+        border-left: 1px solid $clr-border;
+        @include mediaQuery($break-md) {
+            padding-left: 0rem;
+            border-left: none;
+        }
+    }
+}
+
+
+
+.story {
+    &__grid {
+        display: grid;
+        grid-gap: 3rem;
+        grid-template-areas: 
+            "a b c"
+            "d b e";
+            @include mediaQuery($break-md) {
+                grid-template-areas: 
+            "a b "
+            "c d "
+            "e .";
+            }
+
+            @include mediaQuery ($break-sm){
+                grid-template-areas: 
+            "a"
+            "b"
+            "c"
+            "d"
+            "e";
+            }
+    }
+
+    &-a {grid-area: a}
+    &-b {
+        grid-area: b;
+        img {
+            @include imgFit(100%, 87%);
+            @include mediaQuery($break-md) {
+                @include imgFit(100%, 23rem)
+            }
+               
+        }
+    }
+    &-c {grid-area: c}
+    &-d {grid-area: d}
+    &-e {grid-area: e}
+}
+
+.subscribe {
+    text-align: center;
+    padding: 5rem 0;
+    background-color: $clr-dark;
+    color: $clr-light;
+    &__wrapper {
+        max-width: 76rem;
+        margin: 0 auto;
+     
+    }
+
+    h2 {
+        font-family: $font-secondary;
+        text-transform: uppercase;
+        font-size: clamp(2.5rem, 7vw, 4rem);
+    }
+
+    p {
+        margin-bottom: 4rem;
+    }
+}
+
+.btn {
+    display: block;
+    padding: 1rem 2rem;
+    width: max-content;
+    border: 1px solid;
+    border-color: transparent;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+.btn.btn--light {
+    background-color: $clr-light;
+    color: $clr-dark;
+}
+
+
+.btn.btn--outline {
+    background-color: transparent;
+    color: $clr-light;
+    border-color: $clr-light;
+}

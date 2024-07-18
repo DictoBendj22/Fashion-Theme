@@ -1,0 +1,219 @@
+.card {
+  margin-bottom: 3rem;
+  h2,
+  h3,
+  h4 {
+    font-family: $font-secondary;
+    font-weight: bold;
+    line-height: 1.4;
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+    li {
+      font-size: 1.1rem;
+      color: $clr-gray;
+      opacity: 0.5;
+    }
+    li:first-child {
+      display: flex;
+      align-items: center;
+    }
+    li:last-child {
+      text-transform: uppercase;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 110%;
+        width: 1.5rem;
+        height: 1px;
+        background-color: $clr-gray;
+      }
+    }
+
+    span {
+      &.dot {
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        display: block;
+        background-color: $clr-gray;
+        margin: 0 0.5rem;
+      }
+    }
+  }
+}
+
+.card--sm {
+  h4 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+  img {
+    @include imgFit(100%, 30rem);
+  }
+}
+
+.card--xs {
+  h4 {
+    font-size: 1.6rem;
+  }
+  img {
+    @include imgFit(100%, 23rem);
+  }
+}
+
+.card--md {
+  img {
+    @include imgFit(100%, 70rem);
+    @include mediaQuery {
+      @include imgFit(100%, 50rem);
+    }
+  }
+  h2 {
+    font-size: clamp(2rem, 6vw, 3rem);
+    margin-bottom: 1.5rem;
+  }
+}
+
+.card.card--full {
+  display: grid;
+  grid-template-columns: 0.7fr 1fr 1fr;
+  grid-gap: 2rem;
+  padding: 2rem 0;
+  align-items: center;
+  @include mediaQuery($break-sm) {
+    grid-template-columns: 1fr;
+  }
+  img {
+    @include imgFit(100%, 15rem);
+    @include mediaQuery($break-sm) {
+      @include imgFit(100%, 23rem);
+      order: 0;
+    }
+  }
+  ul {
+    @include mediaQuery($break-sm) {
+      order: 1;
+    }
+    li:first-child {
+      text-transform: uppercase;
+      font-weight: bold;
+      color: $clr-gray;
+      margin-bottom: -0.6rem;
+    }
+
+    li:last-child span {
+      font-size: 1.2rem;
+      opacity: 0.5;
+    }
+  }
+
+  h3 {
+    @include mediaQuery($break-sm) {
+      order: 3;
+    }
+  }
+}
+
+.card--md.related {
+  img {
+    @include imgFit(100%, 25rem);
+  }
+
+  h2 {
+    font-size: clamp(2rem, 6vw, 2.5rem);
+    min-height: 7rem;
+    @include mediaQuery {
+      min-height: 8rem;
+    }
+  }
+
+  p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+  }
+
+  a {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    text-decoration: underline;
+  }
+}
+
+.card__team {
+  position: relative;
+  background-color: $clr-dark;
+  color: $clr-light;
+  overflow: hidden;
+  &__content {
+    position: absolute;
+    bottom: 0rem;
+    left: 0;
+    transform: translateY(100%);
+    transition: 0.5s ease;
+    p,
+    li {
+      margin-bottom: 0;
+    }
+    a {
+      color: $clr-light;
+    }
+  }
+  img {
+    transition: 0.5s ease;
+    @include imgFit(300px, 100%);
+    display: block;
+  }
+  &:hover &__content {
+    transform: translateY(0%);
+  }
+  &:hover img {
+    opacity: 0.6;
+  }
+}
+
+.card__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  h3 {
+    font-family: $font-secondary;
+    @include pageHeader;
+    margin-bottom: 1rem;
+  }
+  a {
+    color: $clr-dark;
+  }
+
+  p {
+    max-width: 18rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
+.card__text.card--dark {
+  @extend .card__text;
+  color: $clr-light;
+  outline: 1px solid $clr-border;
+  outline-offset: -1rem;
+  background-color: $clr-dark;
+}
+
+.card__text.card--light {
+  @extend .card__text;
+  background-color: $clr-light;
+  color: $clr-dark;
+  outline: 1px solid $clr-dark;
+  outline-offset: -1rem;
+}

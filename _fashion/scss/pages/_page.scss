@@ -1,0 +1,93 @@
+.pagehero {
+  &__grid {
+    display: grid;
+    grid-template-columns: 0.6fr 2fr;
+    grid-gap: 5rem;
+    border-bottom: 1px solid $clr-border;
+    padding-bottom: 4rem;
+  }
+  h1 {
+    font-family: $font-secondary;
+    font-size: clamp(3rem, 10vw, 25rem);
+  }
+  &__content {
+    align-self: center;
+    h2 {
+      @include pageHeader;
+    }
+    a {
+      text-decoration: underline;
+      text-transform: uppercase;
+      font-size: 1.2rem;
+      text-align: right;
+      display: block;
+    }
+  }
+}
+// ABOUT PAGE
+.values {
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    grid-gap: 5rem;
+  }
+  &__content {
+    justify-self: flex-start;
+    align-self: flex-start;
+    max-width: 30rem;
+    h2 {
+      @include pageHeader;
+    }
+  }
+
+  &__img-a {
+    @include imgFit(45rem, 27rem);
+  }
+
+  &__img-b {
+    align-self: flex-end;
+    @include imgFit(100%, 20rem);
+  }
+}
+
+.team {
+  &__grid {
+    display: grid;
+
+    grid-template-areas:
+      "a f c ."
+      "h e . i"
+      "b . g ."
+      ". j . d";
+  }
+  .team-a {
+    grid-area: a;
+  }
+  .team-b {
+    grid-area: b;
+  }
+  .team-c {
+    grid-area: c;
+  }
+  .team-d {
+    grid-area: d;
+  }
+  .team-e {
+    grid-area: e;
+  }
+  .team-f {
+    grid-area: f;
+  }
+  .team-g {
+    grid-area: g;
+  }
+  .team-h {
+    grid-area: h;
+  }
+  .team-i {
+    grid-area: i;
+  }
+  .team-j {
+    grid-area: j;
+  }
+}

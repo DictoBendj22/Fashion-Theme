@@ -1,0 +1,25 @@
+$clr-accent: hsl(358, 74%, 64%);
+$clr-dark: hsl(217, 6%, 25%);
+$clr-light: hsl(0, 0%, 100%);
+$clr-border: hsl(0, 0%, 85%);
+$clr-gray: hsl(0, 0%, 59%);
+
+$clr-red: hsl(7, 80%, 57%);
+$clr-blue: hsl(219, 58%, 41%);
+$clr-green: hsl(103, 83%, 39%);
+$clr-orange: hsl(36, 92%, 43%);
+
+$font-primary: "Open Sans", Arial, sans-serif;
+$font-secondary: "Antic Didone", serif;
+
+
+$break-sm: 640px;
+$break-md: 768px;
+$break-lg: 1024px;
+$break-xl: 1280px;
+
+$container-padding: 1.5rem;
+$container-width: 120rem;
+$font-size: 1.6rem;
+$header-size: clamp(2rem, 7vw, 3rem);
+
